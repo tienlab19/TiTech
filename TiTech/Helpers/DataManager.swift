@@ -11,5 +11,5 @@ class DataManager {
     static let shared = DataManager.init()
     
     var accessToken = ""
-    var chatGPTapiKey = "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"
+    var chatGPTapiKey = ""
 }
