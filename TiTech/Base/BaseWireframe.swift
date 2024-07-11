@@ -7,7 +7,9 @@
 
 import UIKit
 
-protocol WireframeInterface: AnyObject { }
+protocol WireframeInterface: AnyObject { 
+    
+}
 
 class BaseWireframe<ViewController> where ViewController: UIViewController {
 

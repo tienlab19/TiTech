@@ -73,7 +73,6 @@ extension NetworkingAPI: TargetType {
         case .sendMessage:
             return [
                 HTTPHeaderField.contentType.rawValue: ContentType.json.rawValue,
-//                HTTPHeaderField.authentication.rawValue: "Bearer \(DataManager.shared.chatGPTapiKey)"
             ]
         case .newsCategory, .newsList:
             return [

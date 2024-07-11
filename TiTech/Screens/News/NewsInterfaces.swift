@@ -12,6 +12,7 @@ import UIKit
 protocol NewsWireframeInterface: WireframeInterface {
     func showLoading()
     func hideLoading()
+    func openNewDetail(url: String)
 }
 
 protocol NewsViewInterface: ViewInterface {
@@ -25,6 +26,7 @@ protocol NewsPresenterInterface: PresenterInterface {
     
     func sendGetCategoryRequest()
     func sendGetListNews(categoryId: Int)
+    func sendGoToNewDetailRequest(url: String)
 }
 
 protocol NewsFormatterInterface: FormatterInterface {

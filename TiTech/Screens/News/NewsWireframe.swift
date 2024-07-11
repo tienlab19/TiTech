@@ -42,4 +42,9 @@ extension NewsWireframe: NewsWireframeInterface {
     func hideLoading() {
         self.viewController.hideLoadingView()
     }
+    
+    func openNewDetail(url: String) {
+        let viewController = NewDetailWireframe(addressURL: url)
+        self.viewController.navigationController?.pushWireframe(viewController)
+    }
 }

@@ -56,4 +56,8 @@ extension NewsPresenter: NewsPresenterInterface {
             self?.view.reloadTableViewContent()
         }
     }
+    
+    func sendGoToNewDetailRequest(url: String) {
+        self.wireframe.openNewDetail(url: url)
+    }
 }

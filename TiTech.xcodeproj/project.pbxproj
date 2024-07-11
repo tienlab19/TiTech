@@ -36,6 +36,11 @@
 		1850DC292C3CDF9300F6FEE7 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850DC202C3CDF9300F6FEE7 /* UIImage+.swift */; };
 		1850DC2A2C3CDF9300F6FEE7 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850DC212C3CDF9300F6FEE7 /* UIImageView+.swift */; };
 		1850DC2B2C3CDF9300F6FEE7 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850DC222C3CDF9300F6FEE7 /* UIView+.swift */; };
+		187604E22C3FB06A00BBD10E /* NewDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187604DD2C3FB06A00BBD10E /* NewDetail.storyboard */; };
+		187604E32C3FB06A00BBD10E /* NewDetailInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187604DE2C3FB06A00BBD10E /* NewDetailInterfaces.swift */; };
+		187604E42C3FB06A00BBD10E /* NewDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187604DF2C3FB06A00BBD10E /* NewDetailPresenter.swift */; };
+		187604E52C3FB06A00BBD10E /* NewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187604E02C3FB06A00BBD10E /* NewDetailViewController.swift */; };
+		187604E62C3FB06A00BBD10E /* NewDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187604E12C3FB06A00BBD10E /* NewDetailWireframe.swift */; };
 		18E442FD2C3CEF210059D0DF /* BaseFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E442ED2C3CEF210059D0DF /* BaseFlowViewController.swift */; };
 		18E442FE2C3CEF210059D0DF /* BaseViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E442EE2C3CEF210059D0DF /* BaseViewcontroller.swift */; };
 		18E442FF2C3CEF210059D0DF /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E442F02C3CEF210059D0DF /* APIError.swift */; };
@@ -115,6 +120,12 @@
 		1850DC202C3CDF9300F6FEE7 /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		1850DC212C3CDF9300F6FEE7 /* UIImageView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		1850DC222C3CDF9300F6FEE7 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		187604DD2C3FB06A00BBD10E /* NewDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewDetail.storyboard; sourceTree = "<group>"; };
+		187604DE2C3FB06A00BBD10E /* NewDetailInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDetailInterfaces.swift; sourceTree = "<group>"; };
+		187604DF2C3FB06A00BBD10E /* NewDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDetailPresenter.swift; sourceTree = "<group>"; };
+		187604E02C3FB06A00BBD10E /* NewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDetailViewController.swift; sourceTree = "<group>"; };
+		187604E12C3FB06A00BBD10E /* NewDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDetailWireframe.swift; sourceTree = "<group>"; };
+		187604E72C3FB49F00BBD10E /* TiTech.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TiTech.entitlements; sourceTree = "<group>"; };
 		18E442ED2C3CEF210059D0DF /* BaseFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFlowViewController.swift; sourceTree = "<group>"; };
 		18E442EE2C3CEF210059D0DF /* BaseViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewcontroller.swift; sourceTree = "<group>"; };
 		18E442F02C3CEF210059D0DF /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -222,6 +233,7 @@
 		1850DBE42C3CD7DB00F6FEE7 /* TiTech */ = {
 			isa = PBXGroup;
 			children = (
+				187604E72C3FB49F00BBD10E /* TiTech.entitlements */,
 				18E443592C3CF0E40059D0DF /* Config */,
 				18E442EC2C3CEEEF0059D0DF /* NetworkServices */,
 				181C05C02C3CE28D00B66061 /* Libraties */,
@@ -331,6 +343,18 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		187604DC2C3FB04F00BBD10E /* NewDetailWebview */ = {
+			isa = PBXGroup;
+			children = (
+				187604DD2C3FB06A00BBD10E /* NewDetail.storyboard */,
+				187604DE2C3FB06A00BBD10E /* NewDetailInterfaces.swift */,
+				187604DF2C3FB06A00BBD10E /* NewDetailPresenter.swift */,
+				187604E02C3FB06A00BBD10E /* NewDetailViewController.swift */,
+				187604E12C3FB06A00BBD10E /* NewDetailWireframe.swift */,
+			);
+			path = NewDetailWebview;
+			sourceTree = "<group>";
+		};
 		18E442EC2C3CEEEF0059D0DF /* NetworkServices */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,6 +460,7 @@
 		18E443842C3E754A0059D0DF /* News */ = {
 			isa = PBXGroup;
 			children = (
+				187604DC2C3FB04F00BBD10E /* NewDetailWebview */,
 				18F6B7F52C3F7CD80001A888 /* NewsItemTableViewCell */,
 				18E443982C3E85E90059D0DF /* FilterCollectionViewCell */,
 				18E443852C3E75700059D0DF /* News.storyboard */,
@@ -554,6 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1850DC1B2C3CDF6000F6FEE7 /* VFTTextField.xib in Resources */,
+				187604E22C3FB06A00BBD10E /* NewDetail.storyboard in Resources */,
 				1850DC002C3CD83700F6FEE7 /* Login.storyboard in Resources */,
 				18E443742C3D34F90059D0DF /* ChatAI.storyboard in Resources */,
 				18E4438C2C3E75700059D0DF /* News.storyboard in Resources */,
@@ -618,6 +644,10 @@
 				1850DBEA2C3CD7DB00F6FEE7 /* ViewController.swift in Sources */,
 				18E443972C3E78A30059D0DF /* NewService.swift in Sources */,
 				18F6B7F02C3F714C0001A888 /* BaseURL.swift in Sources */,
+				187604E32C3FB06A00BBD10E /* NewDetailInterfaces.swift in Sources */,
+				187604E42C3FB06A00BBD10E /* NewDetailPresenter.swift in Sources */,
+				187604E52C3FB06A00BBD10E /* NewDetailViewController.swift in Sources */,
+				187604E62C3FB06A00BBD10E /* NewDetailWireframe.swift in Sources */,
 				1850DBE62C3CD7DB00F6FEE7 /* AppDelegate.swift in Sources */,
 				18E443032C3CEF210059D0DF /* Log.swift in Sources */,
 				18E443802C3E65C20059D0DF /* ChatModel.swift in Sources */,
@@ -828,6 +858,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TiTech/TiTech.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CY4CXRJ4H3;
@@ -858,6 +889,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TiTech/TiTech.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CY4CXRJ4H3;

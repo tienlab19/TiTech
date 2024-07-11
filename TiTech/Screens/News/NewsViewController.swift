@@ -94,6 +94,8 @@ extension NewsViewController: UITableViewDelegate {
      
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.new_table.deselectRow(at: indexPath, animated: true)
+        guard let data = self.presenter.listNews[indexPath.row].attributes?.urlDanLinkLienKet else { return }
+        self.presenter.sendGoToNewDetailRequest(url: data)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
