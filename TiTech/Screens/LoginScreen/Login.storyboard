@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="XJ1-QA-Nrj">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="zIc-eW-6fX" customClass="LoginViewController" customModule="TiTech" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z2g-4m-atm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="mzL-RX-WM0">
+                                <rect key="frame" x="16" y="214" width="382" height="108"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ywf-bz-uiR" customClass="VFTTextField" customModule="TiTech" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="Vdz-lt-XVO"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolderText" value="Email"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMB-8H-2zX">
+                                        <rect key="frame" x="0.0" y="60" width="382" height="48"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="roi-99-S7m" customClass="VFTTextField" customModule="TiTech" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="R3f-Ki-rBZ"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeHolderText" value="Mật khẩu"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="secureText" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTy-lD-JBK">
+                                                <rect key="frame" x="334" y="0.0" width="48" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="48" id="jmg-8v-LYc"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="ic_eye"/>
+                                                <connections>
+                                                    <action selector="onSecureTap:" destination="zIc-eW-6fX" eventType="touchUpInside" id="TXP-yj-REj"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="5Ca-GY-dJZ"/>
+                                            <constraint firstItem="roi-99-S7m" firstAttribute="top" secondItem="GMB-8H-2zX" secondAttribute="top" id="E2i-TX-dFN"/>
+                                            <constraint firstItem="roi-99-S7m" firstAttribute="leading" secondItem="GMB-8H-2zX" secondAttribute="leading" id="OeJ-X8-mZj"/>
+                                            <constraint firstAttribute="trailing" secondItem="roi-99-S7m" secondAttribute="trailing" id="aPp-2O-mTP"/>
+                                            <constraint firstAttribute="bottom" secondItem="roi-99-S7m" secondAttribute="bottom" id="dga-54-2ab"/>
+                                            <constraint firstItem="wTy-lD-JBK" firstAttribute="top" secondItem="GMB-8H-2zX" secondAttribute="top" id="jLE-9i-LPd"/>
+                                            <constraint firstAttribute="bottom" secondItem="wTy-lD-JBK" secondAttribute="bottom" id="lFX-Rn-NZu"/>
+                                            <constraint firstAttribute="trailing" secondItem="wTy-lD-JBK" secondAttribute="trailing" id="vIt-yK-wIH"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRj-Jt-aGP">
+                                <rect key="frame" x="16" y="338" width="382" height="52"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.047058823530000002" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="5DX-Mr-drV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Đăng nhập">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onLoginTap:" destination="zIc-eW-6fX" eventType="touchUpInside" id="Gqg-wv-qUf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xh-N5-faF">
+                                <rect key="frame" x="16" y="406" width="382" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="7ub-Oc-dj1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Đăng nhập bằng bảo mật thiết bị" image="ic_biometric">
+                                    <color key="titleColor" red="0.15686274510000001" green="0.047058823530000002" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onLoginBiometric:" destination="zIc-eW-6fX" eventType="touchUpInside" id="ra0-Lp-mc8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3pi-N7-nbV"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Xh-N5-faF" firstAttribute="top" secondItem="xRj-Jt-aGP" secondAttribute="bottom" constant="16" id="ARZ-Yd-5Tv"/>
+                            <constraint firstItem="mzL-RX-WM0" firstAttribute="centerX" secondItem="Z2g-4m-atm" secondAttribute="centerX" id="HiB-hX-h4c"/>
+                            <constraint firstItem="mzL-RX-WM0" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="16" id="SaB-MQ-hep"/>
+                            <constraint firstItem="xRj-Jt-aGP" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="16" id="WN6-cK-UEL"/>
+                            <constraint firstItem="mzL-RX-WM0" firstAttribute="centerY" secondItem="Z2g-4m-atm" secondAttribute="centerY" constant="-100" id="Xki-kd-Itd"/>
+                            <constraint firstAttribute="trailing" secondItem="xRj-Jt-aGP" secondAttribute="trailing" constant="16" id="c7f-NL-UvB"/>
+                            <constraint firstItem="xRj-Jt-aGP" firstAttribute="top" secondItem="mzL-RX-WM0" secondAttribute="bottom" constant="16" id="gSY-eW-4yZ"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="mzL-RX-WM0" secondAttribute="trailing" constant="16" id="nUI-Ql-ANf"/>
+                            <constraint firstItem="6Xh-N5-faF" firstAttribute="top" secondItem="xRj-Jt-aGP" secondAttribute="bottom" constant="16" id="njh-kR-0qA"/>
+                            <constraint firstItem="6Xh-N5-faF" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="16" id="s3h-Yy-jwg"/>
+                            <constraint firstAttribute="trailing" secondItem="6Xh-N5-faF" secondAttribute="trailing" constant="16" id="wGy-ch-Ruw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailView" destination="Ywf-bz-uiR" id="pZD-ww-AC3"/>
+                        <outlet property="passwordSecureView" destination="wTy-lD-JBK" id="jcd-xj-z7Z"/>
+                        <outlet property="passwordView" destination="roi-99-S7m" id="k06-Vg-0Qm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rle-ol-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-30" y="-29"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_biometric" width="24.333333969116211" height="24"/>
+        <image name="ic_eye" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
