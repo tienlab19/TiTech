@@ -10,5 +10,7 @@ target 'TiTech' do
   pod 'Moya'
   pod 'Alamofire'
   pod 'Kingfisher', '~> 5.14.0'
+  pod 'RxSwift', '6.7.1'
+  pod 'RxCocoa', '6.7.1'
 
 end

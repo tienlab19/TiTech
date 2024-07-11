@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1810F6672C3FDC1100A80255 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1810F6662C3FDC1100A80255 /* BaseNavigationController.swift */; };
+		1810F67B2C3FDFC100A80255 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1810F6712C3FDFC100A80255 /* TabBarController.swift */; };
+		1810F67C2C3FDFC100A80255 /* TabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1810F6722C3FDFC100A80255 /* TabBarController.xib */; };
+		1810F67D2C3FDFC100A80255 /* TabbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1810F6732C3FDFC100A80255 /* TabbarItem.swift */; };
 		181C05C32C3CE2D100B66061 /* BiometricAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C05C22C3CE2D100B66061 /* BiometricAuthenticator.swift */; };
 		181C05C52C3CE30E00B66061 /* Device+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C05C42C3CE30E00B66061 /* Device+.swift */; };
 		1850DBE62C3CD7DB00F6FEE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850DBE52C3CD7DB00F6FEE7 /* AppDelegate.swift */; };
@@ -89,8 +93,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1810F6662C3FDC1100A80255 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		1810F6712C3FDFC100A80255 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		1810F6722C3FDFC100A80255 /* TabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarController.xib; sourceTree = "<group>"; };
+		1810F6732C3FDFC100A80255 /* TabbarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarItem.swift; sourceTree = "<group>"; };
 		181C05C22C3CE2D100B66061 /* BiometricAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthenticator.swift; sourceTree = "<group>"; };
 		181C05C42C3CE30E00B66061 /* Device+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+.swift"; sourceTree = "<group>"; };
+		1837741A2C3FCD9600A3D467 /* Demo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Demo.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1850DBE22C3CD7DB00F6FEE7 /* TiTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TiTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1850DBE52C3CD7DB00F6FEE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1850DBE72C3CD7DB00F6FEE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +196,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1810F6742C3FDFC100A80255 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				1810F6712C3FDFC100A80255 /* TabBarController.swift */,
+				1810F6722C3FDFC100A80255 /* TabBarController.xib */,
+				1810F6732C3FDFC100A80255 /* TabbarItem.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		181C05C02C3CE28D00B66061 /* Libraties */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +234,7 @@
 		1850DBD92C3CD7DB00F6FEE7 = {
 			isa = PBXGroup;
 			children = (
+				1837741A2C3FCD9600A3D467 /* Demo.playground */,
 				1850DBE42C3CD7DB00F6FEE7 /* TiTech */,
 				1850DBE32C3CD7DB00F6FEE7 /* Products */,
 				FEF83221FB94CA34AAD4E1FE /* Pods */,
@@ -253,6 +273,7 @@
 		1850DBF92C3CD81300F6FEE7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				1810F6742C3FDFC100A80255 /* TabBar */,
 				18E443842C3E754A0059D0DF /* News */,
 				18E4436D2C3D34DC0059D0DF /* ChatAIScreen */,
 				1850DBFA2C3CD82400F6FEE7 /* LoginScreen */,
@@ -282,6 +303,7 @@
 				1850DC082C3CD89200F6FEE7 /* PresenterInterface.swift */,
 				1850DC092C3CD89200F6FEE7 /* ViewInterface.swift */,
 				1850DC0A2C3CD89200F6FEE7 /* InteractorInterface.swift */,
+				1810F6662C3FDC1100A80255 /* BaseNavigationController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -564,6 +586,8 @@
 				Base,
 			);
 			mainGroup = 1850DBD92C3CD7DB00F6FEE7;
+			packageReferences = (
+			);
 			productRefGroup = 1850DBE32C3CD7DB00F6FEE7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -584,6 +608,7 @@
 				18E443742C3D34F90059D0DF /* ChatAI.storyboard in Resources */,
 				18E4438C2C3E75700059D0DF /* News.storyboard in Resources */,
 				1850DBEF2C3CD7DC00F6FEE7 /* Assets.xcassets in Resources */,
+				1810F67C2C3FDFC100A80255 /* TabBarController.xib in Resources */,
 				1850DC142C3CDB1600F6FEE7 /* GoogleService-Info.plist in Resources */,
 				18E4439B2C3E861E0059D0DF /* FilterCell.xib in Resources */,
 				1850DBF22C3CD7DC00F6FEE7 /* Base in Resources */,
@@ -689,12 +714,14 @@
 				1850DC282C3CDF9300F6FEE7 /* UIDevice+.swift in Sources */,
 				18E443952C3E76220059D0DF /* CategoryResponse.swift in Sources */,
 				18F6B7F22C3F749B0001A888 /* HTTPs.swift in Sources */,
+				1810F6672C3FDC1100A80255 /* BaseNavigationController.swift in Sources */,
 				18E443002C3CEF210059D0DF /* BaseModel.swift in Sources */,
 				1850DC012C3CD83700F6FEE7 /* LoginInterfaces.swift in Sources */,
 				1850DC022C3CD83700F6FEE7 /* LoginPresenter.swift in Sources */,
 				1850DC032C3CD83700F6FEE7 /* LoginViewController.swift in Sources */,
 				18F6B7F42C3F79D60001A888 /* NetworkingManager.swift in Sources */,
 				1850DC042C3CD83700F6FEE7 /* LoginWireframe.swift in Sources */,
+				1810F67B2C3FDFC100A80255 /* TabBarController.swift in Sources */,
 				18E443562C3CF0900059D0DF /* Date+.swift in Sources */,
 				18E4436C2C3D13D30059D0DF /* LoadingView.swift in Sources */,
 				18E443582C3CF0BE0059D0DF /* Number+.swift in Sources */,
@@ -706,6 +733,7 @@
 				181C05C52C3CE30E00B66061 /* Device+.swift in Sources */,
 				1850DC292C3CDF9300F6FEE7 /* UIImage+.swift in Sources */,
 				18E4435D2C3CF12A0059D0DF /* Units.swift in Sources */,
+				1810F67D2C3FDFC100A80255 /* TabbarItem.swift in Sources */,
 				18E442FF2C3CEF210059D0DF /* APIError.swift in Sources */,
 				18E4435B2C3CF0EF0059D0DF /* NotificationName.swift in Sources */,
 			);
