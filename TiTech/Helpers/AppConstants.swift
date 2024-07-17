@@ -9,6 +9,8 @@ import Foundation
 
 struct APIConstants {
     static let DEFAULT_TIMEOUT_INTERVAL: TimeInterval = 60.0
+    
+    static let NASA_API_KEY = "TqsXBhTETsdyskP7a6todOubGNcq5GySaIMEe25O"
 }
 
 enum HTTPHeaderField: String {

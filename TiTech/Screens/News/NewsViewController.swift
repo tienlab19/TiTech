@@ -9,7 +9,7 @@
 
 import UIKit
 
-final class NewsViewController: BaseViewcontroller {
+final class NewsViewController: BaseViewController {
     
     // MARK: - Public properties -
     @IBOutlet weak var filter_coll: UICollectionView!
@@ -58,17 +58,15 @@ extension NewsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.presenter.categoryList.count
+        return self.presenter.collectionView(collectionView, numberOfItemsInSection: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeuCell(ofType: FilterCell.self, for: indexPath)
-        cell.title = self.presenter.categoryList[indexPath.item].attributes?.title ?? ""
-        return cell
+        return self.presenter.collectionView(collectionView, cellForItemAt: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.presenter.sendGetListNews(categoryId: self.presenter.categoryList[indexPath.row].id ?? 0)
+        self.presenter.collectionView(collectionView, didSelectItemAt: indexPath)
     }
 }
 
@@ -93,9 +91,7 @@ extension NewsViewController: UITableViewDelegate {
     }
      
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.new_table.deselectRow(at: indexPath, animated: true)
-        guard let data = self.presenter.listNews[indexPath.row].attributes?.urlDanLinkLienKet else { return }
-        self.presenter.sendGoToNewDetailRequest(url: data)
+        self.presenter.tableView(tableView, didSelectRowAt: indexPath)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -106,16 +102,10 @@ extension NewsViewController: UITableViewDelegate {
 //MARK: - UITableViewDataSource -
 extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.presenter.listNews.count
+        return self.presenter.tableView(tableView, numberOfRowsInSection: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.new_table.dequeueCell(ofType: NewItem.self, for: indexPath)
-        let item = self.presenter.listNews[indexPath.row]
-        cell.titleBlog.text = item.attributes?.title ?? ""
-        cell.titleTag.text = item.attributes?.danhMucTinTuc?.data?.attributes?.title ?? ""
-        cell.subSource.text = "Nguồn: " + (item.attributes?.nguonTinTuc?.data?.attributes?.title ?? "")
-        cell.thumnailImage.setImageWith(imageUrl: item.attributes?.image?.data?.attributes?.formats?.thumbnail?.url ?? "")
-        return cell
+        return self.presenter.tableView(tableView, cellForRowAt: indexPath)
     }
 }

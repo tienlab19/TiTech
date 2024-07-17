@@ -9,7 +9,7 @@
 
 import UIKit
 
-final class LoginViewController: BaseViewcontroller {
+final class LoginViewController: BaseViewController {
 
     // MARK: - Public properties -
     @IBOutlet weak var emailView: VFTTextField!

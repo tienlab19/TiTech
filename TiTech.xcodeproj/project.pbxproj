@@ -85,7 +85,7 @@
 		18E443A02C3E88B30059D0DF /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4439F2C3E88B30059D0DF /* UITableView.swift */; };
 		18E443A22C3E96710059D0DF /* NewListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E443A12C3E96710059D0DF /* NewListData.swift */; };
 		18F6B7F02C3F714C0001A888 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6B7EF2C3F714C0001A888 /* BaseURL.swift */; };
-		18F6B7F22C3F749B0001A888 /* HTTPs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6B7F12C3F749B0001A888 /* HTTPs.swift */; };
+		18F6B7F22C3F749B0001A888 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6B7F12C3F749B0001A888 /* AppConstants.swift */; };
 		18F6B7F42C3F79D60001A888 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6B7F32C3F79D60001A888 /* NetworkingManager.swift */; };
 		18F6B7F82C3F7CFB0001A888 /* NewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6B7F62C3F7CFB0001A888 /* NewItem.swift */; };
 		18F6B7F92C3F7CFB0001A888 /* NewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F6B7F72C3F7CFB0001A888 /* NewItem.xib */; };
@@ -175,7 +175,7 @@
 		18E4439F2C3E88B30059D0DF /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		18E443A12C3E96710059D0DF /* NewListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListData.swift; sourceTree = "<group>"; };
 		18F6B7EF2C3F714C0001A888 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
-		18F6B7F12C3F749B0001A888 /* HTTPs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPs.swift; sourceTree = "<group>"; };
+		18F6B7F12C3F749B0001A888 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		18F6B7F32C3F79D60001A888 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		18F6B7F62C3F7CFB0001A888 /* NewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItem.swift; sourceTree = "<group>"; };
 		18F6B7F72C3F7CFB0001A888 /* NewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewItem.xib; sourceTree = "<group>"; };
@@ -254,10 +254,10 @@
 			isa = PBXGroup;
 			children = (
 				187604E72C3FB49F00BBD10E /* TiTech.entitlements */,
-				18E443592C3CF0E40059D0DF /* Config */,
-				18E442EC2C3CEEEF0059D0DF /* NetworkServices */,
-				181C05C02C3CE28D00B66061 /* Libraties */,
 				1850DC152C3CDF3700F6FEE7 /* Helpers */,
+				18E443592C3CF0E40059D0DF /* Config */,
+				181C05C02C3CE28D00B66061 /* Libraties */,
+				18E442EC2C3CEEEF0059D0DF /* NetworkServices */,
 				1850DC112C3CD8A200F6FEE7 /* Base */,
 				1850DBF92C3CD81300F6FEE7 /* Screens */,
 				1850DC122C3CDB0700F6FEE7 /* SupportingFiles */,
@@ -273,11 +273,11 @@
 		1850DBF92C3CD81300F6FEE7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				181C05C62C3CE57200B66061 /* InitViewController */,
 				1810F6742C3FDFC100A80255 /* TabBar */,
 				18E443842C3E754A0059D0DF /* News */,
 				18E4436D2C3D34DC0059D0DF /* ChatAIScreen */,
 				1850DBFA2C3CD82400F6FEE7 /* LoginScreen */,
-				181C05C62C3CE57200B66061 /* InitViewController */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -298,12 +298,12 @@
 			isa = PBXGroup;
 			children = (
 				1850DC052C3CD89200F6FEE7 /* BaseWireframe.swift */,
+				1810F6662C3FDC1100A80255 /* BaseNavigationController.swift */,
 				1850DC062C3CD89200F6FEE7 /* FormatterInterface.swift */,
 				1850DC072C3CD89200F6FEE7 /* UIStoryboardExtension.swift */,
 				1850DC082C3CD89200F6FEE7 /* PresenterInterface.swift */,
 				1850DC092C3CD89200F6FEE7 /* ViewInterface.swift */,
 				1850DC0A2C3CD89200F6FEE7 /* InteractorInterface.swift */,
-				1810F6662C3FDC1100A80255 /* BaseNavigationController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -319,9 +319,10 @@
 		1850DC152C3CDF3700F6FEE7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				18F6B7F12C3F749B0001A888 /* AppConstants.swift */,
+				18E443512C3CEFF70059D0DF /* DataManager.swift */,
 				1850DC242C3CDF9300F6FEE7 /* Extension */,
 				1850DC162C3CDF4E00F6FEE7 /* CustomUIs */,
-				18E443512C3CEFF70059D0DF /* DataManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -414,7 +415,6 @@
 		18E442F72C3CEF210059D0DF /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				18F6B7F12C3F749B0001A888 /* HTTPs.swift */,
 				18F6B7EF2C3F714C0001A888 /* BaseURL.swift */,
 			);
 			path = Enums;
@@ -713,7 +713,7 @@
 				18E443522C3CEFF70059D0DF /* DataManager.swift in Sources */,
 				1850DC282C3CDF9300F6FEE7 /* UIDevice+.swift in Sources */,
 				18E443952C3E76220059D0DF /* CategoryResponse.swift in Sources */,
-				18F6B7F22C3F749B0001A888 /* HTTPs.swift in Sources */,
+				18F6B7F22C3F749B0001A888 /* AppConstants.swift in Sources */,
 				1810F6672C3FDC1100A80255 /* BaseNavigationController.swift in Sources */,
 				18E443002C3CEF210059D0DF /* BaseModel.swift in Sources */,
 				1850DC012C3CD83700F6FEE7 /* LoginInterfaces.swift in Sources */,

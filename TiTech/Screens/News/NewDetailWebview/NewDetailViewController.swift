@@ -10,7 +10,7 @@
 import UIKit
 import WebKit
 
-final class NewDetailViewController: BaseViewcontroller {
+final class NewDetailViewController: BaseViewController {
 
     // MARK: - Public properties -
     @IBOutlet weak var webView: WKWebView!

@@ -8,6 +8,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class NewsPresenter {
     
@@ -36,6 +37,7 @@ final class NewsPresenter {
 // MARK: - Extensions -
 
 extension NewsPresenter: NewsPresenterInterface {
+    
     func sendGetCategoryRequest() {
         self.wireframe.showLoading()
         self.interactor.handleGetCategory { [weak self] response in
@@ -43,21 +45,53 @@ extension NewsPresenter: NewsPresenterInterface {
             if let data = response?.data {
                 strongSelf.categoryList = data
                 strongSelf.view.reloadCategoryList()
-                strongSelf.sendGetListNews(categoryId: data.first?.id ?? 0)
+                strongSelf.interactor.handleGetListNews(categoryId: data.first?.id ?? 0) { [weak self] response in
+                    guard let strongSelf = self else { return }
+                    strongSelf.listNews = response ?? []
+                    strongSelf.wireframe.hideLoading()
+                    self?.view.reloadTableViewContent()
+                }
             }
         }
     }
     
-    func sendGetListNews(categoryId: Int) {
-        self.interactor.handleGetListNews(categoryId: categoryId) { [weak self] response in
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.listNews.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueCell(ofType: NewItem.self, for: indexPath)
+        let item = self.listNews[indexPath.row]
+        cell.titleBlog.text = item.attributes?.title ?? ""
+        cell.titleTag.text = item.attributes?.danhMucTinTuc?.data?.attributes?.title ?? ""
+        cell.subSource.text = "Nguồn: " + (item.attributes?.nguonTinTuc?.data?.attributes?.title ?? "")
+        cell.thumnailImage.setImageWith(imageUrl: item.attributes?.image?.data?.attributes?.formats?.thumbnail?.url ?? "")
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let data = self.listNews[indexPath.row].attributes?.urlDanLinkLienKet else { return }
+        self.wireframe.openNewDetail(url: data)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.categoryList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeuCell(ofType: FilterCell.self, for: indexPath)
+        cell.title = self.categoryList[indexPath.item].attributes?.title ?? ""
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.wireframe.showLoading()
+        self.interactor.handleGetListNews(categoryId: self.categoryList[indexPath.item].id ?? 0) { [weak self] response in
             guard let strongSelf = self else { return }
             strongSelf.listNews = response ?? []
             strongSelf.wireframe.hideLoading()
             self?.view.reloadTableViewContent()
         }
-    }
-    
-    func sendGoToNewDetailRequest(url: String) {
-        self.wireframe.openNewDetail(url: url)
     }
 }

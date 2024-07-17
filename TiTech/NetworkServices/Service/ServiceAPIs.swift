@@ -52,8 +52,15 @@ extension NetworkingAPI: TargetType {
                 "model": "gpt-3.5-turbo",
                 "messages": [
                     ["role": "system", "content": "You are a helpful assistant."],
-                    ["role": "user", "content": message]
-                ]
+                    ["role": "user", "content": message],
+                ],
+                "temperature": 1,
+                "top_p": 1,
+                "n": 1,
+                "stream": false,
+                "max_tokens": 250,
+                "presence_penalty": 0,
+                "frequency_penalty": 0
             ]
             return .requestParameters(parameters: parameters, encoding: encoding)
         case .newsCategory:
@@ -73,6 +80,7 @@ extension NetworkingAPI: TargetType {
         case .sendMessage:
             return [
                 HTTPHeaderField.contentType.rawValue: ContentType.json.rawValue,
+                HTTPHeaderField.acceptType.rawValue: ContentType.json.rawValue
             ]
         case .newsCategory, .newsList:
             return [

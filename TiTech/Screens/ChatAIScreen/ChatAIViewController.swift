@@ -9,7 +9,7 @@
 
 import UIKit
 
-final class ChatAIViewController: BaseViewcontroller {
+final class ChatAIViewController: BaseViewController {
 
     // MARK: - Public properties -
     @IBOutlet weak var chatInputView: UIView!

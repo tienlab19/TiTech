@@ -57,6 +57,13 @@ class TabBarController: UITabBarController {
         
         let navigationTab_0 = BaseNavigationController(rootViewController: tab_0)
         navigationTab_0.setHiddenNavigationBarViewControllers([NewsViewController.self])
+        
+        // MARK: Page 1
+        let tab_1 = ChatAIWireframe().viewController
+        tab_1.tabBarItem = TabbarItem.CHATAI.item
+        
+        let navigaionTab_1 = BaseNavigationController(rootViewController: tab_1)
+        navigaionTab_1.setHiddenNavigationBarViewControllers([])
     
         // MARK:  Add Tabbar
         self.viewControllers = [navigationTab_0]

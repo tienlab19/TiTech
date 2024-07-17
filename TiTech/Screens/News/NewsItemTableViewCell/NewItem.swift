@@ -20,9 +20,9 @@ class NewItem: UITableViewCell {
         self.selectionStyle = .none
         self.thumnailImage.layer.cornerRadius = 8
         self.thumnailImage.clipsToBounds = true
-        self.tagContainerView.backgroundColor = UIColor(named: "mainColor")
+        self.tagContainerView.backgroundColor = UIColor(named: "primaryColor")
         self.titleTag.textColor = .white
-        self.subSource.textColor = UIColor(named: "mainColor")
+        self.subSource.textColor = UIColor(named: "primaryColor")
         self.tagContainerView.layer.cornerRadius = self.tagContainerView.frame.height / 2
         self.tagContainerView.clipsToBounds = true
     }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public class BaseViewcontroller: UIViewController {
+public class BaseViewController: UIViewController {
     private let loadingView = LoadingView()
 
     public override var preferredStatusBarStyle: UIStatusBarStyle {

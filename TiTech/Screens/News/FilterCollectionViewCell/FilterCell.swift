@@ -34,8 +34,8 @@ class FilterCell: UICollectionViewCell {
 
 extension FilterCell {
     private func setSelected(isSelected: Bool) {
-        self.view_Background.backgroundColor = isSelected ? UIColor(named: "mainColor") : .white
-        self.lbl_Title.textColor = isSelected ? UIColor.white : UIColor(named: "mainColor")
+        self.view_Background.backgroundColor = isSelected ? UIColor(named: "primaryColor") : .white
+        self.lbl_Title.textColor = isSelected ? UIColor.white : UIColor(named: "primaryColor")
     }
     
     private func setData() {

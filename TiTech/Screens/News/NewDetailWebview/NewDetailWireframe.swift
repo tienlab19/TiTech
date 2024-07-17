@@ -26,6 +26,8 @@ final class NewDetailWireframe: BaseWireframe<NewDetailViewController> {
         let presenter = NewDetailPresenter(view: moduleViewController, wireframe: self)
         presenter.addressURL = self.addressURL
         moduleViewController.presenter = presenter
+        
+        moduleViewController.title = "Chi tiết"
     }
 
 }

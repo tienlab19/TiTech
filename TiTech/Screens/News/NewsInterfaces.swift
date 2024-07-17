@@ -25,15 +25,22 @@ protocol NewsPresenterInterface: PresenterInterface {
     var listNews: [NewsItem] { get set }
     
     func sendGetCategoryRequest()
-    func sendGetListNews(categoryId: Int)
-    func sendGoToNewDetailRequest(url: String)
-}
-
-protocol NewsFormatterInterface: FormatterInterface {
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) 
 }
 
 protocol NewsInteractorInterface: InteractorInterface {
     func handleGetCategory(completion: @escaping (CategoryResponse?) -> Void)
     func handleGetListNews(categoryId: Int, completion: @escaping ([NewsItem]?) -> Void)
 }
+
+protocol NewsFormatterInterface: FormatterInterface {
+    
+}
+

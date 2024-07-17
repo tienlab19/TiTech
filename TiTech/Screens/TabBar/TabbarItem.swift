@@ -29,7 +29,7 @@ extension UITabBar {
 // MARK: TabbarItem
 enum TabbarItem {
     case HOME
-    case VOUCHER
+    case CHATAI
 
     var item: UITabBarItem {
         switch self {
@@ -44,10 +44,10 @@ enum TabbarItem {
             
             return tabBarItem
             
-        case .VOUCHER:
+        case .CHATAI:
             let tabBarItem = UITabBarItem()
             tabBarItem.tag = 2
-            tabBarItem.title  = "Ưu đãi"
+            tabBarItem.title  = "CHAT AI"
             tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -1)
             tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             
