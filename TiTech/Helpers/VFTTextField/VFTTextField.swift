@@ -51,7 +51,7 @@ class VFTTextField: UIView {
          }
     }
     
-    @IBInspectable var borderColor: UIColor {
+    @IBInspectable var tfBorderColor: UIColor {
          get {
              return UIColor.init(cgColor: contentView.layer.borderColor ?? UIColor.clear.cgColor)
          } set {

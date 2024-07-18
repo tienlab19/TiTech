@@ -26,6 +26,11 @@ class NetworkingManager {
         let plugins = [NetworkLoggerPlugin(configuration: .init(formatter: .init(responseData: JSONResponseDataFormatter), logOptions: .verbose))]
         return MoyaProvider<NetworkingAPI>(session: APISession.session, plugins: plugins)
     }()
+    
+    static let vietceteraApiProvider: MoyaProvider<VietCeteraAPIs> = {
+        let plugins = [NetworkLoggerPlugin(configuration: .init(formatter: .init(responseData: JSONResponseDataFormatter), logOptions: .verbose))]
+        return MoyaProvider<VietCeteraAPIs>(session: APISession.session, plugins: plugins)
+    }()
 }
 
 class APISession {

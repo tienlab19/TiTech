@@ -36,11 +36,11 @@ final class NewsWireframe: BaseWireframe<NewsViewController> {
 
 extension NewsWireframe: NewsWireframeInterface {
     func showLoading() {
-        self.viewController.showLoadingView()
+        self.viewController.showProgressHud()
     }
     
     func hideLoading() {
-        self.viewController.hideLoadingView()
+        self.viewController.hideProgressHud()
     }
     
     func openNewDetail(url: String) {

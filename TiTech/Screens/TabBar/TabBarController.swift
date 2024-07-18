@@ -59,13 +59,13 @@ class TabBarController: UITabBarController {
         navigationTab_0.setHiddenNavigationBarViewControllers([NewsViewController.self])
         
         // MARK: Page 1
-        let tab_1 = ChatAIWireframe().viewController
-        tab_1.tabBarItem = TabbarItem.CHATAI.item
+        let tab_1 = CarrerBlogRouter.setupModule()
+        tab_1.tabBarItem = TabbarItem.CARRER_BLOG.item
         
         let navigaionTab_1 = BaseNavigationController(rootViewController: tab_1)
-        navigaionTab_1.setHiddenNavigationBarViewControllers([])
+        navigaionTab_1.setHiddenNavigationBarViewControllers([CarrerBlogViewController.self])
     
         // MARK:  Add Tabbar
-        self.viewControllers = [navigationTab_0]
+        self.viewControllers = [navigationTab_0, navigaionTab_1]
     }
 }

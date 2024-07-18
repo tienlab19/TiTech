@@ -11,6 +11,14 @@ struct APIConstants {
     static let DEFAULT_TIMEOUT_INTERVAL: TimeInterval = 60.0
     
     static let NASA_API_KEY = "TqsXBhTETsdyskP7a6todOubGNcq5GySaIMEe25O"
+    static let VIETCETERA_IMAGE_BASE_URL = "https://img.vietcetera.com/"
+}
+
+struct AppConstants {
+    struct Number {
+        static let animationTime = 0.3
+        static let roundCornerRadius: CGFloat = 30
+    }
 }
 
 enum HTTPHeaderField: String {
@@ -25,6 +33,7 @@ enum HTTPHeaderField: String {
     case deviceGuid = "X-DEVICE-GUID"
     case notificationId = "X-Push-Notify"
     case urlScheme = "X-Url-Scheme"
+    case vietceteraApiKey = "apikey"
 }
 
 enum ContentType: String {
@@ -32,6 +41,7 @@ enum ContentType: String {
     case urlencoded = "application/x-www-form-urlencoded"
     case password = "X- -Password"
     case html = "text/html"
+    case vietceteraApiKey = "VIETCETERA_APP_VVV"
 }
 
 enum HTTPStatusCodes: Int {

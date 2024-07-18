@@ -155,6 +155,17 @@ extension UIImageView {
             .scaleFactor(UIScreen.main.scale)
         ])
     }
+    
+    func setImageVietcetera(imageUrl: String, placeHolder: UIImage? = nil) {
+        let baseURL = APIConstants.VIETCETERA_IMAGE_BASE_URL
+        let url = URL(string: baseURL + imageUrl)
+        let processor = DownsamplingImageProcessor(size: bounds.size)
+        kf.setImage(with: url, placeholder: placeHolder,
+                    options: [
+            .processor(processor),
+            .scaleFactor(UIScreen.main.scale)
+        ])
+    }
 
     func setImage(with imageURL: String, completion: ((UIImage) -> Void)?) {
         guard let url = URL(string: imageURL) else {

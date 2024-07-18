@@ -13,6 +13,7 @@ class BaseModel<T: Codable>: Codable {
     var description: String?
     var code: Int?
     var data: T?
+    var errorCode: Int?
     
     enum CodingKeys: CodingKey {
         case success
@@ -20,6 +21,7 @@ class BaseModel<T: Codable>: Codable {
         case description
         case code
         case data
+        case errorCode
     }
     
     required init(from decoder: any Decoder) throws {
@@ -30,5 +32,6 @@ class BaseModel<T: Codable>: Codable {
         self.description = try? container.decodeIfPresent(String.self, forKey: BaseModel<T>.CodingKeys.description)
         self.code = try? container.decodeIfPresent(Int.self, forKey: BaseModel<T>.CodingKeys.code)
         self.data = try? container.decodeIfPresent(T.self, forKey: BaseModel<T>.CodingKeys.data)
+        self.errorCode = try? container.decodeIfPresent(Int.self, forKey: BaseModel<T>.CodingKeys.errorCode)
     }
 }

@@ -1,0 +1,73 @@
+# User-specific files
+*.swp
+*.swo
+*.idea/
+*.xcuserdata/
+*.DS_Store
+*.hmap
+*.ipa
+*.xcuserstate
+*.xcscmblueprint
+
+# Swift Package Manager
+.build/
+.swiftpm/xcode/package.resolved
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
+Carthage/Checkouts/
+Carthage/Packages.resolved
+
+# Xcode
+DerivedData/
+Build/
+*.xccheckout
+*.moved-aside
+*.xcconfig
+*.xcworkspace
+
+# Archive
+*.xcarchive
+
+# R 
+*.generated.swift
+
+# Playground
+timeline.xctimeline
+playground.xcworkspace
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/test_output/report.junit
+
+# Firebase
+GoogleService-Info.plist
+
+# Bundle artifacts
+*.xcappdata
+*.xcodeproj
+*.xcmappingmodel
+*.xcdatamodeld
+
+# AppCenter
+appcenter-config.json
+
+# Other
+.idea/
+*.swp
+*.swo
+*.db
+*.db-*
+*.pdf
+*.orig
+*.log
+*.sign
+*.crt
+*.pem
