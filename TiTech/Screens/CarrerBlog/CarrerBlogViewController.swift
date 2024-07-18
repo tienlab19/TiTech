@@ -47,7 +47,7 @@ extension CarrerBlogViewController: CarrerBlogViewProtocol {
     
     func reloadContents() {
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.tableView.reloadDataSavingSelections()
         }
     }
 }
@@ -55,7 +55,7 @@ extension CarrerBlogViewController: CarrerBlogViewProtocol {
 //MARK: - UITableViewDataSource
 extension CarrerBlogViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.presenter.blogDoc?.count ?? 0
+        return self.presenter.blogDoc.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,5 +67,13 @@ extension CarrerBlogViewController: UITableViewDataSource {
 extension CarrerBlogViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let isReachingEnd = scrollView.contentOffset.y >= 0 && scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)
+        
+        if isReachingEnd && self.presenter.isLoadingMore == false {
+            self.presenter.onLoadMore()
+        }
     }
 }

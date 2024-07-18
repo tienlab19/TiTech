@@ -43,7 +43,7 @@ class TabBarController: UITabBarController {
         UITabBar.appearance().backgroundImage = UIImage()
         UITabBar.appearance().barTintColor = UIColor.white
         UITabBar.appearance().backgroundColor = .white
-        UITabBar.appearance().tintColor = UIColor(named: "mainColor")
+        UITabBar.appearance().tintColor = R.color.mainColor()
         UITabBar.appearance().unselectedItemTintColor = UIColor.init(hexString: "8A8A8A")
         UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().barStyle = .default
@@ -63,7 +63,7 @@ class TabBarController: UITabBarController {
         tab_1.tabBarItem = TabbarItem.CARRER_BLOG.item
         
         let navigaionTab_1 = BaseNavigationController(rootViewController: tab_1)
-        navigaionTab_1.setHiddenNavigationBarViewControllers([CarrerBlogViewController.self])
+        navigaionTab_1.setHiddenNavigationBarViewControllers([])
     
         // MARK:  Add Tabbar
         self.viewControllers = [navigationTab_0, navigaionTab_1]

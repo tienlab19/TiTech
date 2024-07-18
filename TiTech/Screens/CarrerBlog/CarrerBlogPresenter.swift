@@ -16,7 +16,8 @@ class CarrerBlogPresenter {
     private var router: CarrerBlogRouterProtocol
     
     var page: Int = 1
-    var blogDoc: [Docs]? = []
+    var blogDoc: [Docs] = []
+    var isLoadingMore = false
 
     init(interactor: CarrerBlogInteractorInputProtocol,
          router: CarrerBlogRouterProtocol) {
@@ -29,21 +30,25 @@ class CarrerBlogPresenter {
 extension CarrerBlogPresenter: CarrerBlogPresenterProtocol {
     func onViewDidLoad() {
         self.view?.showHud()
+        self.isLoadingMore = false
         self.interactor.requestGetArticals(page: self.page)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(ofType: CarrerBlog.self, for: indexPath)
-        if let item = self.blogDoc?[indexPath.row] {
-            cell.thumnailImage.setImageVietcetera(imageUrl: item.images?.size?.sIX_NINE_1152x648?.url ?? "")
-            cell.mainTitle.text = item.title ?? ""
-            cell.subTitle.text = item.excerpt ?? ""
-            cell.author.text = item.writer?.penname ?? ""
-            cell.topic.text = "| " + (item.topic?.first?.name ?? "")
-            return cell
-        } else {
-            return cell
-        }
+        cell.thumnailImage.setImageVietcetera(imageUrl: self.blogDoc[indexPath.item].images?.size?.sIX_NINE_1152x648?.url ?? "")
+        cell.mainTitle.text = self.blogDoc[indexPath.item].title ?? ""
+        cell.subTitle.text = self.blogDoc[indexPath.item].excerpt ?? ""
+        cell.author.text = self.blogDoc[indexPath.item].writer?.penname ?? ""
+        cell.topic.text = "| " + (self.blogDoc[indexPath.item].topic?.first?.name ?? "")
+        return cell
+    }
+    
+    func onLoadMore() {
+        self.page += 1
+        self.isLoadingMore = true
+        self.view?.showHud()
+        self.interactor.requestGetArticals(page: self.page)
     }
 }
 
@@ -53,8 +58,14 @@ extension CarrerBlogPresenter: CarrerBlogInteractorOutputProtocol {
         self.view?.hideHud()
         switch result {
         case .success(let model):
-            self.blogDoc = model?.data?.docs
+            guard let newData = model?.data?.docs else { return }
+            for data in newData {
+                if !self.blogDoc.contains(where: { data.title == $0.title}) {
+                    self.blogDoc.append(data)
+                }
+            }
             self.view?.reloadContents()
+            
         case .failure(let error):
             print(error)
         }

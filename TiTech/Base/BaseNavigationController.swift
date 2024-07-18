@@ -36,7 +36,7 @@ class BaseNavigationController: UINavigationController {
         self.navigationBar.isTranslucent = false
         self.navigationBar.layer.masksToBounds = false
         self.navigationBar.layer.shadowColor = UIColor.lightGray.cgColor
-        self.navigationBar.layer.shadowOpacity = 0.8
+        self.navigationBar.layer.shadowOpacity = 0.2
         self.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 4.0)
         self.navigationBar.layer.shadowRadius = 4
         self.navigationBar.setBackgroundImage(UIImage(), for: .default)

@@ -12,7 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Docs : Codable {
+struct Docs : Codable, Equatable {
 	let _id : String?
 	let images : Images?
 	let topic : [Topic]?
@@ -66,5 +66,8 @@ struct Docs : Codable {
 		estimatedMinutesRead = try values.decodeIfPresent(Int.self, forKey: .estimatedMinutesRead)
 		writer = try values.decodeIfPresent(Writer.self, forKey: .writer)
 	}
-
+    
+    static func == (lhs: Docs, rhs: Docs) -> Bool {
+        return lhs._id == rhs._id
+    }
 }

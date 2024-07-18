@@ -21,6 +21,8 @@ class CarrerBlogRouter {
         presenter.view = viewController
         interactorInput.output = presenter
         router.viewController = viewController
+        
+        viewController.title = "Sự nghiệp"
         return viewController
     }
 }

@@ -19,10 +19,12 @@ protocol CarrerBlogViewProtocol: AnyObject {
 // MARK: - Presenter
 protocol CarrerBlogPresenterProtocol {
     var page: Int { get set }
-    var blogDoc: [Docs]? { get set}
+    var blogDoc: [Docs] { get set}
+    var isLoadingMore: Bool { get set }
     
     func onViewDidLoad()
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
+    func onLoadMore()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
 }
 
 // MARK: - Interactor Input
