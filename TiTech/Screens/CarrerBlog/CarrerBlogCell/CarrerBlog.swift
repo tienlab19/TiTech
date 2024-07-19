@@ -14,6 +14,7 @@ class CarrerBlog: UITableViewCell {
     @IBOutlet weak var subTitle: UILabel!
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var topic: UILabel!
+    @IBOutlet weak var brandedView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

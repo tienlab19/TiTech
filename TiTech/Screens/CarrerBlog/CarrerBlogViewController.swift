@@ -47,6 +47,7 @@ extension CarrerBlogViewController: CarrerBlogViewProtocol {
     
     func reloadContents() {
         DispatchQueue.main.async {
+            self.presenter.isLoadingMore = false
             self.tableView.reloadDataSavingSelections()
         }
     }

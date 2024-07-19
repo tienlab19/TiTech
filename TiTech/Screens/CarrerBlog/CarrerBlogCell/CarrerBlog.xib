@@ -83,6 +83,29 @@
                                     <constraint firstAttribute="height" constant="1" id="xRH-MO-Uv3"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDo-Id-j3z">
+                                <rect key="frame" x="755" y="10" width="100" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRANDED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLB-JU-tt8">
+                                        <rect key="frame" x="10.666666666666629" y="3" width="78.666666666666671" height="24"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="1pP-jP-k7m"/>
+                                    <constraint firstItem="iLB-JU-tt8" firstAttribute="centerX" secondItem="wDo-Id-j3z" secondAttribute="centerX" id="69h-Ed-Vq5"/>
+                                    <constraint firstAttribute="height" constant="30" id="886-S7-7pc"/>
+                                    <constraint firstItem="iLB-JU-tt8" firstAttribute="centerY" secondItem="wDo-Id-j3z" secondAttribute="centerY" id="ryc-xj-u5i"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -91,12 +114,14 @@
                             <constraint firstItem="Lab-Vx-Qt9" firstAttribute="top" secondItem="eUN-qS-eiI" secondAttribute="top" id="7iW-ec-CyV"/>
                             <constraint firstItem="hg3-RM-EQn" firstAttribute="top" secondItem="Lab-Vx-Qt9" secondAttribute="bottom" constant="8" id="92l-8x-VDP"/>
                             <constraint firstAttribute="bottom" secondItem="nOZ-Q7-ijB" secondAttribute="bottom" constant="-8" id="CMU-HQ-q4F"/>
+                            <constraint firstItem="wDo-Id-j3z" firstAttribute="top" secondItem="eUN-qS-eiI" secondAttribute="top" constant="10" id="I3D-Fg-Gf1"/>
                             <constraint firstAttribute="bottom" secondItem="C0O-mS-3vW" secondAttribute="bottom" constant="10" id="J0s-D9-893"/>
                             <constraint firstItem="C0O-mS-3vW" firstAttribute="leading" secondItem="eUN-qS-eiI" secondAttribute="leading" id="RKB-48-dYL"/>
                             <constraint firstItem="V9x-Yn-eqF" firstAttribute="centerY" secondItem="C0O-mS-3vW" secondAttribute="centerY" id="VCE-Xo-Qch"/>
                             <constraint firstItem="NxA-Pi-V4Q" firstAttribute="leading" secondItem="eUN-qS-eiI" secondAttribute="leading" id="VpI-s5-KYu"/>
                             <constraint firstAttribute="trailing" secondItem="nOZ-Q7-ijB" secondAttribute="trailing" id="ZMp-8a-7vA"/>
                             <constraint firstItem="C0O-mS-3vW" firstAttribute="top" secondItem="NxA-Pi-V4Q" secondAttribute="bottom" constant="10" id="bj3-og-V97"/>
+                            <constraint firstAttribute="trailing" secondItem="wDo-Id-j3z" secondAttribute="trailing" constant="10" id="c5O-FH-1x0"/>
                             <constraint firstItem="V9x-Yn-eqF" firstAttribute="leading" secondItem="C0O-mS-3vW" secondAttribute="trailing" constant="8" id="cBh-EB-bTd"/>
                             <constraint firstItem="ur4-KV-KHR" firstAttribute="centerY" secondItem="V9x-Yn-eqF" secondAttribute="centerY" id="dKC-dC-nvG"/>
                             <constraint firstAttribute="trailing" secondItem="NxA-Pi-V4Q" secondAttribute="trailing" id="fxN-4h-Cpc"/>
@@ -120,12 +145,13 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="author" destination="C0O-mS-3vW" id="3qe-qh-brC"/>
+                <outlet property="brandedView" destination="wDo-Id-j3z" id="7U7-Y4-ofT"/>
                 <outlet property="mainTitle" destination="hg3-RM-EQn" id="m9H-5z-Jwd"/>
                 <outlet property="subTitle" destination="NxA-Pi-V4Q" id="LHM-3s-Byg"/>
                 <outlet property="thumnailImage" destination="Lab-Vx-Qt9" id="o9y-Yd-abh"/>
                 <outlet property="topic" destination="V9x-Yn-eqF" id="y2b-G5-N74"/>
             </connections>
-            <point key="canvasLocation" x="250" y="69"/>
+            <point key="canvasLocation" x="249.61832061068702" y="68.661971830985919"/>
         </tableViewCell>
     </objects>
     <resources>
@@ -133,7 +159,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

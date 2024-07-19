@@ -30,17 +30,18 @@ class CarrerBlogPresenter {
 extension CarrerBlogPresenter: CarrerBlogPresenterProtocol {
     func onViewDidLoad() {
         self.view?.showHud()
-        self.isLoadingMore = false
         self.interactor.requestGetArticals(page: self.page)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(ofType: CarrerBlog.self, for: indexPath)
+        let isBranded = self.blogDoc[indexPath.row].label ?? ""
         cell.thumnailImage.setImageVietcetera(imageUrl: self.blogDoc[indexPath.item].images?.size?.sIX_NINE_1152x648?.url ?? "")
         cell.mainTitle.text = self.blogDoc[indexPath.item].title ?? ""
         cell.subTitle.text = self.blogDoc[indexPath.item].excerpt ?? ""
         cell.author.text = self.blogDoc[indexPath.item].writer?.penname ?? ""
         cell.topic.text = "| " + (self.blogDoc[indexPath.item].topic?.first?.name ?? "")
+        cell.brandedView.isHidden = isBranded.isEmpty
         return cell
     }
     

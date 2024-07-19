@@ -66,6 +66,6 @@ class TabBarController: UITabBarController {
         navigaionTab_1.setHiddenNavigationBarViewControllers([])
     
         // MARK:  Add Tabbar
-        self.viewControllers = [navigationTab_0, navigaionTab_1]
+        self.viewControllers = [/*navigationTab_0,*/ navigaionTab_1, navigationTab_0]
     }
 }
