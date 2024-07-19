@@ -208,7 +208,8 @@ extension BaseService {
                 let decodedObject = try self.jsonDecoder.decode(T.self, from: response.data)
                 return .success(decodedObject)
             } catch {
-                let apiError = APIError(message: error.localizedDescription, statusCode: response.statusCode)
+                let apiError = APIError(message: error.localizedDescription, 
+                                        statusCode: response.statusCode)
                 return .failure(apiError)
             }
         case .failure(let error):

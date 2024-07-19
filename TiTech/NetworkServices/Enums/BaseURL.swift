@@ -12,6 +12,9 @@ enum BaseURL: String {
     case category
     case newsList
     case vietCetera
+    case vietCeteraBannerHeader
+    case tags
+    case popularArtical
     
     var path: String {
         switch self {
@@ -21,7 +24,7 @@ enum BaseURL: String {
         case .chatAI:
             return "https://api.openai.com/v1"
             
-        case .vietCetera:
+        case .vietCetera, .vietCeteraBannerHeader, .tags, .popularArtical:
             return "https://api.vietcetera.com/client/api/v2"
         }
     }
@@ -39,6 +42,15 @@ enum BaseURL: String {
             
         case .vietCetera:
             return "/latest-article"
+            
+        case .vietCeteraBannerHeader:
+            return "/banner"
+        
+        case .tags:
+            return "/tags"
+            
+        case .popularArtical:
+            return "/popular-article"
         }
     }
 }

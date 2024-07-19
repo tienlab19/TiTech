@@ -10,26 +10,35 @@ import Moya
 
 enum VietCeteraAPIs {
     case CARRER_BLOG(page: Int)
+    case BANNER_HEADER
+    case TAG
+    case POPULAR_ARTICAL
 }
 
 extension VietCeteraAPIs: TargetType {
     var baseURL: URL {
-        switch self {
-        case .CARRER_BLOG:
-            return URL(string: BaseURL.vietCetera.path)!
-        }
+        return URL(string: BaseURL.vietCetera.path)!
     }
     
     var path: String {
         switch self {
         case .CARRER_BLOG:
             return BaseURL.vietCetera.endpoint
+            
+        case .BANNER_HEADER:
+            return BaseURL.vietCeteraBannerHeader.endpoint
+        
+        case .TAG:
+            return BaseURL.tags.endpoint
+            
+        case .POPULAR_ARTICAL:
+            return BaseURL.popularArtical.endpoint
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .CARRER_BLOG:
+        case .CARRER_BLOG, .BANNER_HEADER, .TAG, .POPULAR_ARTICAL:
             return .get
         }
     }
@@ -60,12 +69,39 @@ extension VietCeteraAPIs: TargetType {
                                         "THREE_TWO_936x624"]
             ]
             return .requestParameters(parameters: parameters, encoding: encoding)
+            
+        case .BANNER_HEADER:
+            let paramaters: [String: Any] = [
+                "language": "VN",
+                "type": "BILLBOARD"
+            ]
+            return .requestParameters(parameters: paramaters, encoding: encoding)
+            
+        case .TAG:
+            return .requestPlain
+            
+        case .POPULAR_ARTICAL:
+            let parameters: [String: Any] = [
+                "language":"VN",
+                "limit":5,
+                "sortBy":"recommendViewRanking",
+                "isNoBookmark":"true",
+                "isNoAuthor":"true",
+                "thumbnailImageSizes": ["SIX_NINE_375x211",
+                                        "SIX_NINE_1152x648",
+                                        "SIX_NINE_768x432"],
+                "articleImageSizes": ["SIX_NINE_375x211",
+                                      "SIX_NINE_1152x648",
+                                      "SIX_NINE_768x432"]
+            ]
+            
+            return .requestParameters(parameters: parameters, encoding: encoding)
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .CARRER_BLOG:
+        case .CARRER_BLOG, .BANNER_HEADER, .TAG, .POPULAR_ARTICAL:
             return [
                 HTTPHeaderField.contentType.rawValue: ContentType.json.rawValue,
                 HTTPHeaderField.acceptType.rawValue: ContentType.json.rawValue,

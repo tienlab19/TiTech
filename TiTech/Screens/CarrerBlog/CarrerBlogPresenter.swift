@@ -17,6 +17,7 @@ class CarrerBlogPresenter {
     
     var page: Int = 1
     var blogDoc: [Docs] = []
+    var bannerHeader: [Banner] = []
     var isLoadingMore = false
 
     init(interactor: CarrerBlogInteractorInputProtocol,
@@ -30,6 +31,7 @@ class CarrerBlogPresenter {
 extension CarrerBlogPresenter: CarrerBlogPresenterProtocol {
     func onViewDidLoad() {
         self.view?.showHud()
+        self.interactor.requestGetBannerHeader()
         self.interactor.requestGetArticals(page: self.page)
     }
     
@@ -69,6 +71,18 @@ extension CarrerBlogPresenter: CarrerBlogInteractorOutputProtocol {
             
         case .failure(let error):
             print(error)
+        }
+    }
+    
+    func didGetBannerHeader(with result: Result<BannerHeaderModel?, APIError>) {
+        switch result {
+        case .success(let model):
+            guard let newData = model?.data?.banner else { return }
+            self.bannerHeader = newData
+            self.view?.reloadBanner(isShow: self.bannerHeader.isEmpty)
+            
+        case .failure(let failure):
+            print(failure.message)
         }
     }
 }

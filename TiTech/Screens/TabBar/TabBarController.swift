@@ -63,9 +63,18 @@ class TabBarController: UITabBarController {
         tab_1.tabBarItem = TabbarItem.CARRER_BLOG.item
         
         let navigaionTab_1 = BaseNavigationController(rootViewController: tab_1)
-        navigaionTab_1.setHiddenNavigationBarViewControllers([])
+        navigaionTab_1.setHiddenNavigationBarViewControllers([CarrerBlogViewController.self])
     
+        // MARK: Page 2
+        let tab_2 = SearchRouter.setupModule()
+        tab_2.tabBarItem = TabbarItem.SEARCH.item
+        
+        let navigaionTab_2 = BaseNavigationController(rootViewController: tab_2)
+        navigaionTab_2.setHiddenNavigationBarViewControllers([SearchViewController.self])
+        
         // MARK:  Add Tabbar
-        self.viewControllers = [/*navigationTab_0,*/ navigaionTab_1, navigationTab_0]
+        self.viewControllers = [navigaionTab_1,
+                                navigaionTab_2,
+                                navigationTab_0]
     }
 }

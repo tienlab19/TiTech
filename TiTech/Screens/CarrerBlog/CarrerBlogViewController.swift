@@ -12,6 +12,7 @@ import UIKit
 class CarrerBlogViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bannerHeaderImage: UIImageView!
     
     var presenter: CarrerBlogPresenterProtocol!
     
@@ -43,6 +44,13 @@ extension CarrerBlogViewController: CarrerBlogViewProtocol {
     
     func hideHud() {
         self.hideProgressHud()
+    }
+    
+    func reloadBanner(isShow: Bool) {
+        DispatchQueue.main.async {
+            self.bannerHeaderImage.isHidden = isShow
+            self.bannerHeaderImage.setImageVietcetera(imageUrl: self.presenter.bannerHeader.randomElement()?.mobile ?? "")
+        }
     }
     
     func reloadContents() {

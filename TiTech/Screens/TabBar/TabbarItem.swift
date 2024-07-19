@@ -30,6 +30,7 @@ extension UITabBar {
 enum TabbarItem {
     case HOME
     case CARRER_BLOG
+    case SEARCH
 
     var item: UITabBarItem {
         switch self {
@@ -53,6 +54,17 @@ enum TabbarItem {
             tabBarItem.image = self.tabbarImage(with: UIImage(named: "ic_home"))
             tabBarItem.selectedImage = self.tabbarImage(with: UIImage(named: "ic_home_selected"))
 
+            return tabBarItem
+            
+        case .SEARCH:
+            let tabBarItem = UITabBarItem()
+            tabBarItem.tag = 2
+            tabBarItem.title  = "Tìm kiếm"
+            tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -1)
+            tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            tabBarItem.image = self.tabbarImage(with: UIImage(named: "ic_home"))
+            tabBarItem.selectedImage = self.tabbarImage(with: UIImage(named: "ic_home_selected"))
+            
             return tabBarItem
             
         }

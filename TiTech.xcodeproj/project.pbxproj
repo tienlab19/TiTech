@@ -148,6 +148,14 @@
 		18F6B7F82C3F7CFB0001A888 /* NewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6B7F62C3F7CFB0001A888 /* NewItem.swift */; };
 		18F6B7F92C3F7CFB0001A888 /* NewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F6B7F72C3F7CFB0001A888 /* NewItem.xib */; };
 		58843D8C647E30CE4FD5FADF /* Pods_TiTech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96602CC420B45A7B531B20B /* Pods_TiTech.framework */; };
+		FF46230A2C4A52BE00476D0D /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4623042C4A52BE00476D0D /* SearchPresenter.swift */; };
+		FF46230B2C4A52BE00476D0D /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4623052C4A52BE00476D0D /* SearchRouter.swift */; };
+		FF46230C2C4A52BE00476D0D /* SearchInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4623062C4A52BE00476D0D /* SearchInteractorInput.swift */; };
+		FF46230D2C4A52BE00476D0D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4623072C4A52BE00476D0D /* SearchViewController.swift */; };
+		FF46230E2C4A52BE00476D0D /* SearchConstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4623092C4A52BE00476D0D /* SearchConstract.swift */; };
+		FF46230F2C4A52BE00476D0D /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF4623082C4A52BE00476D0D /* SearchViewController.xib */; };
+		FF9D00082C4A24BB00C0E852 /* BannerHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D00072C4A24BB00C0E852 /* BannerHeaderModel.swift */; };
+		FF9D000A2C4A4EF000C0E852 /* TagsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D00092C4A4EF000C0E852 /* TagsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -298,6 +306,14 @@
 		314CD0F70E87C12A10C376AA /* Pods-TiTech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiTech.release.xcconfig"; path = "Target Support Files/Pods-TiTech/Pods-TiTech.release.xcconfig"; sourceTree = "<group>"; };
 		B9A83684FA8E9E238C446DAE /* Pods-TiTech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiTech.debug.xcconfig"; path = "Target Support Files/Pods-TiTech/Pods-TiTech.debug.xcconfig"; sourceTree = "<group>"; };
 		F96602CC420B45A7B531B20B /* Pods_TiTech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TiTech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF4623042C4A52BE00476D0D /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		FF4623052C4A52BE00476D0D /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		FF4623062C4A52BE00476D0D /* SearchInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractorInput.swift; sourceTree = "<group>"; };
+		FF4623072C4A52BE00476D0D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FF4623082C4A52BE00476D0D /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		FF4623092C4A52BE00476D0D /* SearchConstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConstract.swift; sourceTree = "<group>"; };
+		FF9D00072C4A24BB00C0E852 /* BannerHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerHeaderModel.swift; sourceTree = "<group>"; };
+		FF9D00092C4A4EF000C0E852 /* TagsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +425,7 @@
 			children = (
 				181C05C62C3CE57200B66061 /* InitViewController */,
 				186233FE2C48ABAC008211A6 /* CarrerBlog */,
+				FF9D000B2C4A505E00C0E852 /* Search */,
 				1810F6742C3FDFC100A80255 /* TabBar */,
 				18E443842C3E754A0059D0DF /* News */,
 				18E4436D2C3D34DC0059D0DF /* ChatAIScreen */,
@@ -601,6 +618,8 @@
 				18D65A842C48B731007A1920 /* Writer.swift */,
 				18D65A742C48B5E5007A1920 /* CarrerBlogModel.swift */,
 				1849CFF62C48C9F9006F6704 /* ImageSizes.swift */,
+				FF9D00072C4A24BB00C0E852 /* BannerHeaderModel.swift */,
+				FF9D00092C4A4EF000C0E852 /* TagsModel.swift */,
 			);
 			path = CarrerBlogs;
 			sourceTree = "<group>";
@@ -663,10 +682,7 @@
 			isa = PBXGroup;
 			children = (
 				1862340B2C48AF47008211A6 /* VietCeteraService */,
-				18E4437C2C3D3D200059D0DF /* ServiceAPIs.swift */,
-				18E442FB2C3CEF210059D0DF /* LoginService.swift */,
-				18E4437A2C3D3C9E0059D0DF /* ChatService.swift */,
-				18E443962C3E78A30059D0DF /* NewService.swift */,
+				FF9D00062C4A1BF600C0E852 /* HealthNewService */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -770,6 +786,30 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FF9D00062C4A1BF600C0E852 /* HealthNewService */ = {
+			isa = PBXGroup;
+			children = (
+				18E4437A2C3D3C9E0059D0DF /* ChatService.swift */,
+				18E442FB2C3CEF210059D0DF /* LoginService.swift */,
+				18E4437C2C3D3D200059D0DF /* ServiceAPIs.swift */,
+				18E443962C3E78A30059D0DF /* NewService.swift */,
+			);
+			path = HealthNewService;
+			sourceTree = "<group>";
+		};
+		FF9D000B2C4A505E00C0E852 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FF4623042C4A52BE00476D0D /* SearchPresenter.swift */,
+				FF4623052C4A52BE00476D0D /* SearchRouter.swift */,
+				FF4623062C4A52BE00476D0D /* SearchInteractorInput.swift */,
+				FF4623072C4A52BE00476D0D /* SearchViewController.swift */,
+				FF4623082C4A52BE00476D0D /* SearchViewController.xib */,
+				FF4623092C4A52BE00476D0D /* SearchConstract.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -853,6 +893,7 @@
 				1849D0012C48E987006F6704 /* Merriweather-BoldItalic.ttf in Resources */,
 				18B49BC12C48FB220088F367 /* Poppins-LightItalic.ttf in Resources */,
 				1810F67C2C3FDFC100A80255 /* TabBarController.xib in Resources */,
+				FF46230F2C4A52BE00476D0D /* SearchViewController.xib in Resources */,
 				1862340A2C48ABEB008211A6 /* CarrerBlogViewController.xib in Resources */,
 				18B49BB82C48FB220088F367 /* Poppins-BlackItalic.ttf in Resources */,
 				18B49BBA2C48FB220088F367 /* Poppins-BoldItalic.ttf in Resources */,
@@ -953,6 +994,11 @@
 				187604E52C3FB06A00BBD10E /* NewDetailViewController.swift in Sources */,
 				187604E62C3FB06A00BBD10E /* NewDetailWireframe.swift in Sources */,
 				1850DBE62C3CD7DB00F6FEE7 /* AppDelegate.swift in Sources */,
+				FF46230A2C4A52BE00476D0D /* SearchPresenter.swift in Sources */,
+				FF46230B2C4A52BE00476D0D /* SearchRouter.swift in Sources */,
+				FF46230C2C4A52BE00476D0D /* SearchInteractorInput.swift in Sources */,
+				FF46230D2C4A52BE00476D0D /* SearchViewController.swift in Sources */,
+				FF46230E2C4A52BE00476D0D /* SearchConstract.swift in Sources */,
 				18E443032C3CEF210059D0DF /* Log.swift in Sources */,
 				18E443802C3E65C20059D0DF /* ChatModel.swift in Sources */,
 				1850DC252C3CDF9300F6FEE7 /* CAGradientLayer+.swift in Sources */,
@@ -987,6 +1033,7 @@
 				18E443772C3D34F90059D0DF /* ChatAIViewController.swift in Sources */,
 				18D65A712C48AFC9007A1920 /* VietCeteraAPIs.swift in Sources */,
 				18E443782C3D34F90059D0DF /* ChatAIInteractor.swift in Sources */,
+				FF9D00082C4A24BB00C0E852 /* BannerHeaderModel.swift in Sources */,
 				18E443792C3D34F90059D0DF /* ChatAIWireframe.swift in Sources */,
 				18E442FD2C3CEF210059D0DF /* BaseFlowViewController.swift in Sources */,
 				1850DC2B2C3CDF9300F6FEE7 /* UIView+.swift in Sources */,
@@ -1035,6 +1082,7 @@
 				18E443A02C3E88B30059D0DF /* UITableView.swift in Sources */,
 				181C05C32C3CE2D100B66061 /* BiometricAuthenticator.swift in Sources */,
 				181C05C52C3CE30E00B66061 /* Device+.swift in Sources */,
+				FF9D000A2C4A4EF000C0E852 /* TagsModel.swift in Sources */,
 				1850DC292C3CDF9300F6FEE7 /* UIImage+.swift in Sources */,
 				18D65A952C48B731007A1920 /* THREE_TWO_536x356.swift in Sources */,
 				18E4435D2C3CF12A0059D0DF /* Units.swift in Sources */,

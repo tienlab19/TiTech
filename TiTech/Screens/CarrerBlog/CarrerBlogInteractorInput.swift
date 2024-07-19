@@ -26,4 +26,10 @@ extension CarrerBlogInteractorInput: CarrerBlogInteractorInputProtocol {
             self.output?.didGetArticals(with: completion)
         })
     }
+    
+    func requestGetBannerHeader() {
+        self.service?.getListBannerHeader(completion: { completion in
+            self.output?.didGetBannerHeader(with: completion)
+        })
+    }
 }
