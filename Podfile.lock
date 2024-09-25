@@ -1,5 +1,13 @@
 PODS:
   - Alamofire (5.9.1)
+  - AppCenter (5.0.5):
+    - AppCenter/Analytics (= 5.0.5)
+    - AppCenter/Crashes (= 5.0.5)
+  - AppCenter/Analytics (5.0.5):
+    - AppCenter/Core
+  - AppCenter/Core (5.0.5)
+  - AppCenter/Crashes (5.0.5):
+    - AppCenter/Core
   - FirebaseAppCheckInterop (10.29.0)
   - FirebaseAuth (10.29.0):
     - FirebaseAppCheckInterop (~> 10.17)
@@ -58,6 +66,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AppCenter
   - FirebaseAuth
   - Kingfisher (~> 5.14.0)
   - Moya
@@ -70,6 +79,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AppCenter
     - FirebaseAppCheckInterop
     - FirebaseAuth
     - FirebaseCore
@@ -89,6 +99,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  AppCenter: 994875ea7941b9e168babb98299f900a94bcef13
   FirebaseAppCheckInterop: 6a1757cfd4067d8e00fccd14fcc1b8fd78cfac07
   FirebaseAuth: e2ebfaf9fb4638a1c9a3b0efd17d1b90943987cd
   FirebaseCore: dfc33f0dffba05f76181da9cc0151171ebb3bd10
@@ -106,6 +117,6 @@ SPEC CHECKSUMS:
   RxSwift: b9a93a26031785159e11abd40d1a55bcb8057e52
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
 
-PODFILE CHECKSUM: d96f3b8a43ae420d0383504ccf3d9191d4a27e42
+PODFILE CHECKSUM: 1c5edeff382ebb9f9a6f556138a4a6b295deaf0a
 
 COCOAPODS: 1.15.2

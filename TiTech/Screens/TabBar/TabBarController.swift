@@ -74,7 +74,6 @@ class TabBarController: UITabBarController {
         
         // MARK:  Add Tabbar
         self.viewControllers = [navigaionTab_1,
-                                navigaionTab_2,
                                 navigationTab_0]
     }
 }

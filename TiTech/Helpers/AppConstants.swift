@@ -19,6 +19,8 @@ struct AppConstants {
         static let animationTime = 0.3
         static let roundCornerRadius: CGFloat = 30
     }
+    
+    static let APPCENTER_API_KEY = "07bf0db7-0a7f-4a6f-bea5-e12b7a719ece"
 }
 
 enum HTTPHeaderField: String {

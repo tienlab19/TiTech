@@ -15,5 +15,6 @@ target 'TiTech' do
   pod 'OpenAISwift'
   pod 'SnapKit'
   pod 'R.swift'
+  pod 'AppCenter'
 
 end

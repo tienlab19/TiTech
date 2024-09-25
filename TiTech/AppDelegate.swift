@@ -7,6 +7,9 @@
 
 import UIKit
 import FirebaseCore
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //MARK: - Firebase Configure
         FirebaseApp.configure()
+        configureAppCenter()
         return true
     }
     
@@ -24,7 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) { }
+}
 
-
+extension AppDelegate {
+    private func configureAppCenter() {
+        AppCenter.start(withAppSecret: AppConstants.APPCENTER_API_KEY, services:[
+          Analytics.self,
+          Crashes.self
+        ])
+    }
 }
 

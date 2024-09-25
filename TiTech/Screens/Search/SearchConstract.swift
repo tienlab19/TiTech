@@ -13,6 +13,8 @@ import UIKit
 protocol SearchViewProtocol: AnyObject {
     func showHud()
     func hideHud()
+    
+    func reloadHasgTagList()
 }
 
 // MARK: - Presenter
@@ -21,6 +23,10 @@ protocol SearchPresenterProtocol {
     var listPopularArtical: [Docs]? { get set }
     
     func onViewDidLoad()
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
 }
 
 // MARK: - Interactor Input
